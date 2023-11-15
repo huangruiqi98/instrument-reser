@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>设备预约状态</title>
+    <style>
+        /* 添加适当的样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>设备近七日预约状态</h1>
+    {% for equipment, bookings in schedule.items() %}
+        <h2>{{ equipment }}</h2>
+        <table>
+            <tr>
+                <th>日期</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>预约人</th>
+            </tr>
+            {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.date }}</td>
+                    <td>{{ booking.start_time }}</td>
+                    <td>{{ booking.end_time }}</td>
+                    <td>{{ booking.username }}</td> <!-- 显示预约人信息 -->
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>目前没有设备预约信息。</p>
+    {% endfor %}
+</body>
+</html>

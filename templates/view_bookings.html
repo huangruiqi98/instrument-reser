@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的预约 - 实验室设备管理系统</title>
+</head>
+<body>
+    <h1>我的预约</h1>
+    <table border="1">
+        <tr>
+            <th>设备名称</th>
+            <th>日期</th>
+            <th>开始时间</th>
+            <th>结束时间</th>
+            <th>操作</th>
+        </tr>
+        {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.equipment.name }}</td>
+                <td>{{ booking.date }}</td>
+                <td>{{ booking.start_time }}</td>
+                <td>{{ booking.end_time }}</td>
+                <td>
+                    <form action="{{ url_for('cancel_booking', id=booking.id) }}" method="post">
+                        <input type="submit" value="取消预约">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

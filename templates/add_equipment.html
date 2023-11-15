@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加设备 - 实验室设备管理系统</title>
+</head>
+<body>
+    <h1>添加设备</h1>
+    <form action="/add-equipment" method="post">
+        <label for="name">设备名称:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="model">型号:</label>
+        <input type="text" id="model" name="model"><br><br>
+
+        <label for="status">状态:</label>
+        <select id="status" name="status">
+            <option value="available">可用</option>
+            <option value="unavailable">不可用</option>
+        </select><br><br>
+
+        <label for="location">位置:</label>
+        <input type="text" id="location" name="location"><br><br>
+
+        <input type="submit" value="添加设备">
+    </form>
+</body>
+</html>

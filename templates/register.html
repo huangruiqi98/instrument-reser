@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>注册 - 实验室设备管理系统</title>
+    <!-- 引入 Bootstrap 或其他 CSS 框架 -->
+</head>
+<body>
+    <h2>注册</h2>
+    <form action="/register" method="post">
+        <label for="username">用户名:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <label for="role">角色:</label>
+            <select id="role" name="role">
+                <option value="teacher">老师</option>
+                <option value="student">同学</option>
+            </select>
+
+        <input type="submit" value="注册">
+    </form>
+    <a href="/login">已有账号？登录</a>
+</body>
+</html>

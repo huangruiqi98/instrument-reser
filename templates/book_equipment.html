@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>设备预约 - 实验室设备管理系统</title>
+</head>
+<body>
+    <h1>预约设备</h1>
+    <form action="/book-equipment" method="post">
+        <label for="equipment">选择设备:</label>
+        <select id="equipment" name="equipment">
+            {% for equipment in equipments %}
+                <option value="{{ equipment.id }}">{{ equipment.name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="date">日期:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="time_slot">选择时间段:</label>
+        <select id="time_slot" name="time_slot">
+            <option value="8-10">上午 8:00 - 10:00</option>
+            <option value="10-12">上午 10:00 - 12:00</option>
+            <option value="13-15">下午 13:00 - 15:00</option>
+            <option value="15-17">下午 15:00 - 17:00</option>
+            <option value="18-20">晚上 18:00 - 20:00</option>
+        </select>
+<!--        -->
+<!--        <label for="start_time">开始时间:</label>-->
+<!--        <input type="time" id="start_time" name="start_time" required><br><br>-->
+
+<!--        <label for="end_time">结束时间:</label>-->
+<!--        <input type="time" id="end_time" name="end_time" required><br><br>-->
+
+        <input type="submit" value="预约设备">
+    </form>
+</body>
+</html>
